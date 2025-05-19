@@ -1,0 +1,72 @@
+body {
+       font-family: Arial, sans-serif;
+        background-image: url("/result.webp"); /* Add the image path here */
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        color: rgb(240, 234, 234);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative; /* Ensures the text stays above the image */
+        overflow: hidden;
+    }
+.background {
+    backdrop-filter: blur(3px); /* Apply blur effect */
+    width: 100vw; /* Ensure it covers the full viewport width */
+    height: 100vh; /* Ensure it covers the full viewport height */
+    margin-left: 0;
+  }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #ff6f61; /* Coral color for the heading */
+      }
+
+      #resultDisplay {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Light background for the result */
+        padding: 25px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        color: #333333; /* Dark gray for text */
+      }
+
+      #resultDisplay p {
+        margin: 10px 0;
+        font-size: 1rem;
+      }
+
+      .thank-you-message {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Light background for the message */
+        padding: 20px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        text-align: center;
+        color: #333333; /* Dark gray for text */
+      }
+
+      .thank-you-message p {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ff6f61; /* Coral color for the message */
+      }

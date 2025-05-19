@@ -1,0 +1,94 @@
+body {
+        font-family: Arial, sans-serif;
+        background-image: url("/heart2.jpg"); /* Add the image path here */
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        color: rgb(240, 234, 234);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative; /* Ensures the text stays above the image */
+        overflow: hidden; /* Prevents horizontal scrollbar due to moving text */
+      }
+    .background {
+    backdrop-filter: blur(3px); /* Apply blur effect */
+    width: 100vw; /* Ensure it covers the full viewport width */
+    height: 100vh; /* Ensure it covers the full viewport height */
+   }
+     /*  Overlay to make text more readable 
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(237, 229, 229, 0.871); /* Dark overlay for better text visibility 
+        z-index: 1;
+      }*/
+
+      /* Moving text at the top */
+      .moving-text {
+        position: absolute;
+        top: 10px;
+        left: 100%; /* Start off-screen */
+        white-space: nowrap; /* Prevents text from wrapping */
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        animation: moveText 15s linear infinite; /* Animation for moving text */
+      }
+
+      @keyframes moveText {
+        0% {
+          left: 100%; /* Start off-screen to the right */
+        }
+        100% {
+          left: -100%; /* Move off-screen to the left */
+        }
+      }
+
+      h1,
+      .button-container {
+        position: relative; /* Ensures text and buttons are above the overlay */
+        z-index: 2;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Enhanced text shadow for readability */
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        background-color: #ff6f61;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        background-color: #ff4a3d;
+        transform: translateY(-5px);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }

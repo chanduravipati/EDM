@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+        background-image: url("/medical2.jpg"); /* Add the image path here */
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        color: rgb(240, 234, 234);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        position: relative; /* Ensures the text stays above the image */
+        overflow: hidden;
+
+}
+.background {
+    backdrop-filter: blur(3px); /* Apply blur effect */
+    width: 100vw; /* Ensure it covers the full viewport width */
+    height: 110vh; /* Ensure it covers the full viewport height */
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffdd57; /* Bright yellow for the heading */
+  }
+  
+  form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #ffdd57; /* Bright yellow for labels */
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333; /* Dark gray for input text */
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6f61; /* Coral color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ff4a3d; /* Darker coral on hover */
+  }
+  
+  #medicineResult {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    color: #ffdd57; /* Bright yellow for result text */
+  }
+  
+  #medicineResult h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffdd57; /* Bright yellow for heading */
+  }
+  
+  #medicineResult p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff; /* White for paragraph text */
+  }
+  

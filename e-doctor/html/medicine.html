@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medicine Recommendations</title>
+    <link rel="stylesheet" href="../css/medicine.css" />
+  </head>
+  <body class="background">
+    <h1>Medicine Recommendations</h1>
+    <form id="medicineForm">
+      <label for="disease">Enter Disease:</label>
+      <input
+        type="text"
+        id="disease"
+        name="disease"
+        placeholder="e.g., High Blood Pressure, Diabetes"
+        required
+      />
+      <button type="submit">Get Recommendations</button>
+    </form>
+    <div id="medicineResult"></div>
+
+    <script>
+      document
+        .getElementById("medicineForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const disease = document.getElementById("disease").value.trim().toLowerCase();
+
+          const response = await fetch("http://127.0.0.1:8000/recommend", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ disease }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            document.getElementById("medicineResult").innerHTML = `<strong>Recommended Medicines:</strong> ${result.medicines.join(", ")}`;
+          } else {
+            document.getElementById("medicineResult").textContent = result.detail;
+          }
+        });
+    </script>
+  </body>
+</html>

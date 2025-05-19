@@ -1,0 +1,173 @@
+ /* General Styles */
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-image: url('/ai doctor.avif'); /* Set the background image */
+        background-size: cover;  /* Resize the image to cover the whole screen */
+        background-position: center; /* Center the image */
+        background-attachment: fixed; /* Keep the background fixed while scrolling */
+        overflow: hidden; /* Disable scrolling */
+    }
+
+      /* Welcome Page Styles */
+    #welcome {
+        text-align: center;
+        padding: 50px;
+        background-image: url("doctor.jpg"); /* Add your image link here */
+        background-size: cover; /* Ensures the image covers the entire section */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        min-height: 100vh; /* Full viewport height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* Ensures the text stays above the image */
+    }
+      /* Brighten and Enhance the Background Image */
+    #welcome::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+                          /* Same image as background */
+        background-size: cover;
+        background-position: center;
+        filter: brightness(1.2) contrast(1.1); /* Adjust brightness and contrast */
+        z-index: 1;
+    }
+
+      /* Gradient Overlay for Better Contrast */
+    #welcome::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(149, 52, 43, 0.826),
+          rgba(0, 123, 255, 0.4)
+        ); /* Lighter gradient overlay */
+        z-index: 2;
+    }
+    /* Text and Button Positioning */
+      #welcome h1,
+      #welcome p,
+      #welcome button {
+        position: relative; /* Ensures text and button are above the overlay */
+        z-index: 3;
+      }
+
+      /* Heading Styling */
+      #welcome h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        animation: fadeInDown 1s ease-in-out;
+      }
+
+      /* Paragraph Styling */
+      #welcome p {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+        max-width: 600px;
+        line-height: 1.8;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        color: #f0f0f0;
+        animation: fadeInUp 1s ease-in-out;
+      }
+
+      /* Button Styling */
+      #welcome button {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        background-color: #ff6f61; /* Coral color */
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      #welcome button:hover {
+        background-color: #ff4a3d; /* Darker coral on hover */
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
+      }
+
+      #welcome button:active {
+        transform: translateY(0);
+      }
+
+      /* Glow Effect for Button */
+      #welcome button {
+        position: relative;
+        overflow: hidden;
+      }
+
+      #welcome button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 38, 255, 0.4),
+          rgba(0, 0, 0, 0) 70%
+        );
+        transform: translate(-50%, -50%);
+        transition: opacity 0.5s ease;
+        opacity: 0;
+      }
+
+      #welcome button:hover::after {
+        opacity: 1;
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* Smooth scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
